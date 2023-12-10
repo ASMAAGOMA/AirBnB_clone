@@ -3,15 +3,23 @@
 # models/engine/file_storage.py
 
 import json
-from models.base_model import BaseModel
 from os.path import exists
+from models.base_model import BaseModel
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
+from models.state import State
+from models.user import User
 
 class FileStorage:
     """File Storage class for managing storage of BaseModel instances"""
 
     __file_path = "file.json"
     __objects = {}
-    MyClasses = {"BaseModel": BaseModel}
+    MyClasses = {"BaseModel": BaseModel, "User": User, "Place": Place,
+                  "Amenity": Amenity, "City": City, "Review": Review,
+                  "State": State}
 
     def all(self):
         """Return the dictionary __objects."""
