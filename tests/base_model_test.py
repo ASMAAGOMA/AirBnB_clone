@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime, timedelta
 from unittest.mock import patch
-from models import BaseModel
+from models.base_model import BaseModel
 
 class TestBaseModelInstantiation(unittest.TestCase):
     """Test cases for the instantiation of the BaseModel class."""
