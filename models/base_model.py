@@ -9,8 +9,9 @@ class BaseModel:
         from models import storage
         if kwargs:
             for key, value in kwargs.items():
+                date_form = "%Y-%m-%dT%H:%M:%S.%f"
                 if key == 'created_at' or key == 'updated_at':
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key, datetime.strptime(value, date_form))
                 elif key != '__class__':
                     setattr(self, key, value)
             if 'id' not in kwargs:
@@ -25,13 +26,12 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
-
 
     def to_dict(self):
         obj_dict = self.__dict__.copy()

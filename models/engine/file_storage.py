@@ -1,5 +1,5 @@
-# models/engine/file_storage.py
 #!/usr/bin/python3
+# models/engine/file_storage.py
 
 
 import json
@@ -31,8 +31,8 @@ class FileStorage:
             with open(FileStorage.__file_path, encoding="utf-8") as jsonStr:
                 deserialized = json.load(jsonStr)
                 for obj_values in deserialized.values():
-                    MyClasses = obj_values["__class__"]
-                    if isinstance(MyClasses, str) and type(eval(MyClasses)) == type:
-                        self.new(eval(MyClasses)(**obj_values))
+                    MyCls = obj_values["__class__"]
+                    if isinstance(MyCls, str) and type(eval(MyCls)) == type:
+                        self.new(eval(MyCls)(**obj_values))
         except FileNotFoundError:
             pass
