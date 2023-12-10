@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """Defines the HBNB"""
-from shlex import split
 import cmd
 import re
+from shlex import split
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 from models.state import State
 from models.city import City
-from models.amenity import Amenity
 from models.place import Place
+from models.amenity import Amenity
 from models.review import Review
-from models.user import User
 
 
 def parsing(arg):
@@ -19,16 +19,16 @@ def parsing(arg):
     if curly_braces is None:
         if square_brackets is None:
             return [i.strip(",") for i in split(arg)]
-            else:
+        else:
             x = split(arg[:square_brackets.span()[0]])
             r = [i.strip(",") for i in x]
             r.append(square_brackets.group())
             return r
-        else:
-            x = split(arg[:curly_braces.span()[0]])
-            r = [i.strip(",") for i in x]
-            r.append(curly_braces.group())
-            return r
+    else:
+        x = split(arg[:curly_braces.span()[0]])
+        r = [i.strip(",") for i in x]
+        r.append(curly_braces.group())
+        return r
 
 
 class HBNBCommand(cmd.Cmd):
