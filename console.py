@@ -48,11 +48,9 @@ class HBNBCommand(cmd.Cmd):
             "Review"
     }
 
-
     def emptyline(self):
         """Do nothing upon receiving an empty line."""
         pass
-    
 
     def default(self, arg):
         """Default for cmd"""
@@ -75,17 +73,14 @@ class HBNBCommand(cmd.Cmd):
         print("*** Unknown syntax: {}".format(arg))
         return False
 
-
     def do_quit(self, arg):
         """command to exit the program"""
         return True
-
 
     def do_EOF(self, arg):
         """exit the program."""
         print("")
         return True
-
 
     def do_creat(self, arg):
         """Create a new class and print the id."""
@@ -98,23 +93,21 @@ class HBNBCommand(cmd.Cmd):
             print(eval(ar[0])().id)
             storage.save()
 
-
     def do_show(self, arg):
-            """ Prints the string representation of an instance
-            based on the class name and id"""
-            ar = parsing(arg)
-            serialized_objects = storage.all()
-            if len(ar) == 0:
-                print("** class name missing **")
-            elif ar[0] not in HBNBCommand.__classes:
-                print("** class doesn't exist **")
-            elif len(ar) == 1:
-                print("** instance id missing **")
-            elif "{}.{}".format(ar[0], ar[1]) not in serialized_objects:
-                print("** no instance found **")
-            else:
-                print(serialized_objects["{}.{}".format(ar[0], ar[1])])
-
+        """ Prints the string representation of an instance
+        based on the class name and id"""
+        ar = parsing(arg)
+        serialized_objects = storage.all()
+        if len(ar) == 0:
+            print("** class name missing **")
+        elif ar[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        elif len(ar) == 1:
+            print("** instance id missing **")
+        elif "{}.{}".format(ar[0], ar[1]) not in serialized_objects:
+            print("** no instance found **")
+        else:
+            print(serialized_objects["{}.{}".format(ar[0], ar[1])])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id"""
@@ -132,7 +125,6 @@ class HBNBCommand(cmd.Cmd):
             del serialized_objects["{}.{}".format(ar[0], ar[1])]
             storage.save()
 
-    
     def do_all(self, arg):
             """Prints all string representation of all instances
             based or not on the class name"""
@@ -148,7 +140,6 @@ class HBNBCommand(cmd.Cmd):
                         ob.append(j.__str__())
                 print(ob)
 
-
     def do_count(self, arg):
         """gives the number of users thst have the same user name"""
         ar = parsing(arg)
@@ -157,7 +148,6 @@ class HBNBCommand(cmd.Cmd):
             if ar[0] == ob.__class__.__name__:
                 c += 1
         print(c)
-
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id """
