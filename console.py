@@ -82,7 +82,11 @@ class HBNBCommand(cmd.Cmd):
         print("")
         return True
 
+<<<<<<< HEAD
     def do_creat(self, arg):
+=======
+    def do_create(self, arg):
+>>>>>>> be494269ffe5a05bde9ebb12a0cece7acc7546ba
         """Create a new class and print the id."""
         ar = parsing(arg)
         if len(ar) == 0:
@@ -94,8 +98,13 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, arg):
+<<<<<<< HEAD
         """ Prints the string representation of an instance
         based on the class name and id"""
+=======
+        """ Prints the string representation of
+        an instance based on the class name and id"""
+>>>>>>> be494269ffe5a05bde9ebb12a0cece7acc7546ba
         ar = parsing(arg)
         serialized_objects = storage.all()
         if len(ar) == 0:
@@ -126,6 +135,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_all(self, arg):
+<<<<<<< HEAD
             """Prints all string representation of all instances
             based or not on the class name"""
             ar = parsing(arg)
@@ -139,6 +149,21 @@ class HBNBCommand(cmd.Cmd):
                     elif len(ar) == 0:
                         ob.append(j.__str__())
                 print(ob)
+=======
+        """Prints all string representation of all instances
+        based or not on the class name"""
+        ar = parsing(arg)
+        if len(ar) > 0 and ar[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            ob = []
+            for j in storage.all().values():
+                if len(ar) > 0 and ar[0] == j.__class__.__name__:
+                    ob.append(j.__str__())
+                elif len(ar) == 0:
+                    ob.append(j.__str__())
+            print(ob)
+>>>>>>> be494269ffe5a05bde9ebb12a0cece7acc7546ba
 
     def do_count(self, arg):
         """gives the number of users thst have the same user name"""

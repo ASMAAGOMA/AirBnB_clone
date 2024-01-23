@@ -12,14 +12,15 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
+
 class FileStorage:
     """File Storage class for managing storage of BaseModel instances"""
 
     __file_path = "file.json"
     __objects = {}
     MyClasses = {"BaseModel": BaseModel, "User": User, "Place": Place,
-                  "Amenity": Amenity, "City": City, "Review": Review,
-                  "State": State}
+                 "Amenity": Amenity, "City": City, "Review": Review,
+                 "State": State}
 
     def all(self):
         """Return the dictionary __objects."""

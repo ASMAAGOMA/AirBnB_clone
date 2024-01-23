@@ -3,6 +3,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     """BaseModel class representing the base model for other classes."""
 
@@ -37,13 +38,15 @@ class BaseModel:
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
-        """Save the BaseModel instance and update the 'updated_at' attribute."""
+        """Save the BaseModel instance and update the
+        'updated_at' attribute."""
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """Convert the BaseModel instance to a dictionary format for serialization.
+        """Convert the BaseModel instance to
+        a dictionary format for serialization.
 
         Returns:
             dict: Dictionary representation of the BaseModel instance.
