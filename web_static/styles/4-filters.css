@@ -6,6 +6,8 @@
     border-radius: 4px;
     display: flex;
     align-items:center;
+    position: relative;
+    cursor: pointer;
 }
 .button{
     font-size: 18px;
