@@ -100,19 +100,27 @@ article>h2 {
 }
 
 .tv {
-    background-image: url(../images/icon_tv.png);
+    list-style-image: url(../images/icon_tv.png);
+    font-weight: 700;
+    font-size: larger;
+    vertical-align: middle;
 }
 
 .wifi {
-    background-image: url(/images/icon_wifi.png);
+    list-style-image: url(../images/icon_wifi.png);
+    font-weight: 700;
+    font-size: large;
 }
 
 .pets {
-    background-image: url(/images/icon_pets.png);
+    list-style-image: url(../images/icon_pets.png);
+    font-weight: 700;
+    font-size: larger;
 }
 
 .reviews {
     margin-bottom: 5%;
+    list-style: none;
 }
 
 .places .reviews>ul {
@@ -130,6 +138,5 @@ article>h2 {
 }
 
 .places .reviews ul li p {
-    padding-bottom: 5%;
-    margin-top: 0px;
+    list-style: none;
 }
