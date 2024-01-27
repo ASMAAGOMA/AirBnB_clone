@@ -1,4 +1,16 @@
-.container{
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0px;
+    padding: 0px; 
+    color: #484848;
+    font-size: 14px;
+    flex-direction: column;
+}
+.container {
     max-width: 1000px;
     margin: 30px auto;
+    width: 100%;
+    flex: 1 0 auto;
 }
