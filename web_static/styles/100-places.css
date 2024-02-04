@@ -97,6 +97,8 @@ article>h2 {
     padding-bottom: 25px;
     background-repeat: no-repeat;
     line-height: 25px;
+    display: flex;
+    align-items: center; 
 }
 
 .tv {
@@ -104,6 +106,7 @@ article>h2 {
     font-weight: 700;
     font-size: larger;
     vertical-align: middle;
+    align-items:center;
 }
 
 .wifi {
@@ -139,4 +142,6 @@ article>h2 {
 
 .places .reviews ul li p {
     list-style: none;
+    padding-bottom: 5%;
+    margin-top: 0px;
 }

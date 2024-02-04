@@ -23,3 +23,8 @@ article h2 {
     font-size: 30px;
     text-align: center;
 }
+.suite{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
